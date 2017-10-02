@@ -2,10 +2,16 @@ package com.example.android.miwokdictionary;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import static android.R.attr.id;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -14,24 +20,22 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> numbersEnglish = new ArrayList<>();
-        numbersEnglish.add(0, "one");
-        numbersEnglish.add(1, "two");
-        numbersEnglish.add(2, "three");
-        numbersEnglish.add(3, "four");
-        numbersEnglish.add(4, "five");
-        numbersEnglish.add(5, "six");
-        numbersEnglish.add(6, "seven");
-        numbersEnglish.add(7, "eight");
-        numbersEnglish.add(8, "nine");
-        numbersEnglish.add(9, "ten");
+        ArrayList<Word> numbersEnglish = new ArrayList<>();
+        numbersEnglish.add(new Word("one", "lutti"));
+        numbersEnglish.add(new Word("two", "otiiko"));
+        numbersEnglish.add(new Word("three", "tolookosu"));
+        numbersEnglish.add(new Word("four", "oyyisa"));
+        numbersEnglish.add(new Word("five", "massokka"));
+        numbersEnglish.add(new Word("six", "temmokka"));
+        numbersEnglish.add(new Word("seven", "kenekaku"));
+        numbersEnglish.add(new Word("eight", "kawinta"));
+        numbersEnglish.add(new Word("nine", "wo'e"));
+        numbersEnglish.add(new Word("ten", "na'aacha"));
 
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+        WordAdapter itemsAdapter = new WordAdapter(this, numbersEnglish);
 
-        for(int i = 0; i < numbersEnglish.size(); i++) {
-            TextView numbersView = new TextView(this);
-            numbersView.setText(numbersEnglish.get(i));
-            rootView.addView(numbersView);
-        }
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(itemsAdapter);
     }
 }
