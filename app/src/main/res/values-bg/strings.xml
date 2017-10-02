@@ -5,4 +5,14 @@
     <string name="category_family">Членове на семейството</string>
     <string name="category_numbers">Числа</string>
     <string name="category_phrases">Фрази</string>
+    <string name="eight">Осем</string>
+    <string name="five">Пет</string>
+    <string name="four">Четири</string>
+    <string name="nine">Девет</string>
+    <string name="one">Едно</string>
+    <string name="seven">Седем</string>
+    <string name="six">Шест</string>
+    <string name="ten">Десет</string>
+    <string name="three">Три</string>
+    <string name="two">Две</string>
 </resources>
