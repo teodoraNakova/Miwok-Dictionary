@@ -3,32 +3,36 @@ package com.example.android.miwokdictionary;
 
 public class Word {
 
-    private int defaultTranslation;
-    private String miwokTranslation;
-    private int imageResourceId;
+    private static final int NO_IMAGE_PROVIDED = -1;
+    private int mDefaultTranslation;
+    private String mMiwokTranslation;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
 
     public Word(int defaultTranslation, String miwokTranslation) {
-        this.defaultTranslation = defaultTranslation;
-        this.miwokTranslation = miwokTranslation;
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
     }
 
     public Word(int defaultTranslation, String miwokTranslation, int imageResourceId) {
         this(defaultTranslation, miwokTranslation);
-        this.imageResourceId = imageResourceId;
+        mImageResourceId = imageResourceId;
     }
 
-    public int getDefaultTranslation() {
-        return this.defaultTranslation;
+    public int getmDefaultTranslation() {
+        return mDefaultTranslation;
     }
 
     public String getMiwokTranslation() {
-        return this.miwokTranslation;
+        return mMiwokTranslation;
     }
 
     public int getImageResourceId() {
-        return this.imageResourceId;
+        return mImageResourceId;
     }
 
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
 
 }
