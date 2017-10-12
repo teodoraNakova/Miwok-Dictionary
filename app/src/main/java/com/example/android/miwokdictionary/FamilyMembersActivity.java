@@ -29,7 +29,7 @@ public class FamilyMembersActivity extends AppCompatActivity {
         familyMembers.add(new Word(R.string.son, "angsi", R.drawable.family_son, R.raw.family_son));
         familyMembers.add(new Word(R.string.daughter, "tune", R.drawable.family_daughter, R.raw.family_daughter));
         familyMembers.add(new Word(R.string.older_brother, "taachi", R.drawable.family_older_brother, R.raw.family_older_brother));
-        familyMembers.add(new Word(R.string.younger_sister, "chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother));
+        familyMembers.add(new Word(R.string.younger_brother, "chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother));
         familyMembers.add(new Word(R.string.older_sister, "teṭe", R.drawable.family_older_sister, R.raw.family_older_sister));
         familyMembers.add(new Word(R.string.younger_sister, "kolliti", R.drawable.family_younger_sister, R.raw.family_younger_sister));
         familyMembers.add(new Word(R.string.grandmother, "ama", R.drawable.family_grandmother, R.raw.family_grandmother));
@@ -49,6 +49,12 @@ public class FamilyMembersActivity extends AppCompatActivity {
                 mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
     }
 
     private void releaseMediaPlayer() {
