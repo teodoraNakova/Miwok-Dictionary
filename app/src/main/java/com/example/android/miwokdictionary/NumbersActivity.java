@@ -1,6 +1,10 @@
 package com.example.android.miwokdictionary;
 
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +23,7 @@ public class NumbersActivity extends AppCompatActivity {
         }
     };
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
